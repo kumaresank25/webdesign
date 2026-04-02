@@ -1,0 +1,126 @@
+header{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-around;
+    background-color: rgb(163, 240, 218);
+    top: 0;
+    height: 50%;
+}
+a{
+    color: black;
+    font-size: large;
+}
+a:hover{
+    color: white;
+}
+header img{
+    height: 150px;
+    width: 150px;
+    position: relative;
+    right:100px;
+}
+nav a{
+    margin: 10px;
+    text-decoration: none;
+    padding: 20px;
+}
+nav a:hover{
+    border-bottom: 5px;
+}
+footer{
+    background-color: rgb(125, 125, 168);
+    text-align: center;
+    padding: 7px;
+}
+section{
+    background-color: aquamarine;
+    margin: 3px;
+    text-align: center;
+}
+#about p{
+    justify-content: space-around;
+    width:1000px;
+    height: 200px;
+}
+#about img{
+    width:300px;
+    background-color: rgb(121, 11, 115);
+}
+.row{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.col{
+    margin: 5px;
+    background-color: rgb(156, 165, 147)    ;
+    align-items: center;
+}
+button{
+    background-color: palevioletred;
+    border-color: rgb(31, 2, 2);
+   border-radius:5%;
+}
+#foods{
+    min-height: 600px;
+        
+}
+img{
+    height: 300px;
+    width: 300px;
+}
+.hdiv img{
+    position: relative;
+    left:80%;
+    width: 600px;
+
+}
+h2{
+    font-family: sans-serif;
+}
+button:hover{
+    background-color: azure;
+    transform: scale(1.1);
+    transition-duration: 1s;
+}
+img:hover{
+    transform: scale(1.1);
+    transition: all 2s linear;
+}
+#home{
+    background-color: rgb(227, 193, 245);
+}
+#about{
+    background-color: linen;
+}
+body{
+    background-color: bisque;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+   
+}
+.home{
+   position: relative;
+   left: 500px;
+}
+.foods{
+    text-align: center;
+}
+
+#foods .col{
+    padding: 10px;
+    border: 2px solid black;
+    border-radius: 10px;
+    transition: all 1s linear;
+    margin: 50px;
+    box-shadow: 10px 10px 50px ;
+}
+#foods .col:hover{
+    transform: scale(1.08);
+}
+
+#foods button{
+    padding: 10px;
+    font-weight: bold;
+    text-transform: capitalize;
+}

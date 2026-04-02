@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mywebsite</title>
+    <link rel="stylesheet" href="project.css">
+</head>
+<body>
+    <header><img src="/html/mylogo.png" alt="" height="200px">
+    <nav>
+        <a href="#home">home</a>
+        <a href="#about">about</a>
+        <a href="#foods">foods</a>
+        <a href="#contact">contact</a>
+        </nav>
+        <button onclick="signIn()">sign in</button>
+    </header>
+    <main>
+            <section id="home"> 
+                <div class="row">
+                    <div class="hdiv">
+                        <h1 class="home">HOME</h1>
+                       <img src="/homelogo.jpg" alt="">
+                    </div>
+                </div>
+            </section>
+             <section id="about">
+                <div class="row">
+                    <div class="col">
+                        <img src="/html/kolapasi.jpg" alt="">
+                        </div>
+                        <div class="col">
+                            <h1>about us</h1>
+                        <p>Food content spans engaging visual media like high-quality photography, Reels/TikToks, and behind-the-scenes kitchen action, alongside educational content such as recipes, nutritional information, and stories behind food production. Effective food content focuses on storytelling, showcasing local ingredients, and creating visually appealing "foodie" experiences that resonate with conscious consumers. 
+Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem, ut iste. Quam quis at voluptates praesentium, necessitatibus adipisci temporibus neque accusantium alias nobis architecto distinctio quia iste inventore commodi officiis!</p>
+                    </div>
+                </div>
+             </section>
+             <section id="foods">
+                <h1 class="foods">FOODS</h1>  
+                    <div class="row">   
+                        <div class="col">  
+                        <img src="/html/food.jpg" alt="">
+                        <h2>chicken rice</h2>
+                        <p>price:80 ruppess only</p>
+                        <button onclick="order('chicken rice' ,80)">order now</button>
+                        <button onclick="payNow('chicken rice',80)">💳 Pay Now</button>
+                        <a href="https://wa.me/6385137150?text=I want to order chicken rice" target="_blank">
+    <button style="background: green; color: white;">Order on WhatsApp</button>
+</a>
+                    
+                        </div>
+                    
+                        <div class="col">
+                        <img src="/html/food1.jpg" alt="">
+                        <h2>egg rice</h2>
+                        <p>price:60 ruppess only</p>
+                        <button onclick ="order('egg rice',60)">order now</button>
+                        </div>
+            
+                        <div class="col">
+                        <img src="/html/chicken 65.jpg" alt="">
+                        <h2>chicken 65</h2>
+                        <p>price:40 ruppess only</p>
+                        <button onclick="order('chicken 65,100gram',40)">order now</button>
+                        </div>
+                    
+                        <div class="col">
+                        <img src="/html/chicken noodels.jpg" alt="">
+                        <h2>chicken noodles</h2>
+                        <p>price:80 ruppess only</p>
+                        <button onclick="order('chicken noodels',80)">order now</button>
+                        </div>
+                   
+                        <div class="col">
+                        <img src="/html/egg noodels.jpg" alt="">
+                        <h2>egg noodles</h2>
+                        <p>price:60 ruppess only</p>
+                        <button onclick="order('egg noodels',60)">order now</button>
+                        </div>
+
+                        <div class="col">
+                        <img src="/html/paanipuri.jpg" alt="">
+                        <h2>panipuri</h2>
+                        <p>price:25 ruppess only</p>
+                        <button onclick="order('panipuri',25)">order now</button>
+                        </div>
+
+                    </div>
+                    
+             </section>
+             <section id="contact">
+                    <h1 class="col"></h1>
+    <h1>location</h1>
+    <button onclick="getLocation()">📍 Find My Location</button>
+<p id="location"></p>
+ <!-- Google Map -->
+    <img src="/kolapasi fast food.png" alt="try again" style="height: 300px;"><br>
+
+    <!-- Open in Google Maps -->
+    <a href="https://www.google.com/maps?q=Edumalai,Mannachanallur,Trichy" target="_blank">
+        <button>📍 Open in Google Maps</button>
+    </a>
+    <h1>Edumalai,mannachanullur(tk),Trichy-621007</h1>
+ </section>
+        <footer>
+        <h1>This website created by kumaresan☺2026</h1>
+        <p>Email: kumaresan☺2026gmail.com</p>
+        </footer>
+    </main>
+</body>
+<script>
+function signIn() {
+    let name = prompt("Enter your name:");
+    
+    if (name) {
+        alert("Welcome " + name + " 👋");
+    } else {
+        alert("Sign in cancelled");
+    }
+}
+
+function getLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(function(position) {
+            document.getElementById("location").innerHTML =
+                "Latitude: " + position.coords.latitude +
+                "<br>Longitude: " + position.coords.longitude;
+        });
+    } else {
+        alert("Geolocation is not supported by this browser.");
+    }
+}
+
+let cart = [];
+
+function order(foodName, price) {
+    cart.push({ foodName, price });
+
+    alert(
+        "🛒 Added to Cart!\n\n" +
+        "Food: " + foodName + "\n" +
+        "Price: ₹" + price
+    );
+} // ✅ CLOSED HERE
+
+function payNow(foodName, price) {
+    let upiID = "916385137150@axl";
+
+    let url = "upi://pay?pa=" + upiID +
+              "&pn=FoodOrder" +
+              "&tn=" + encodeURIComponent(foodName) +
+              "&am=" + price +
+              "&cu=INR";
+
+    window.location.href = url;
+
+    setTimeout(() => {
+        alert("⚠️ Open this on mobile with UPI apps like Google Pay / PhonePe.");
+    }, 2000);
+}
+</script>
+</html>
